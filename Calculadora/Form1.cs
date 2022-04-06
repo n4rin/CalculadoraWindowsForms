@@ -194,12 +194,31 @@ namespace Calculadora
 
         private void buttonQuadrado_Click(object sender, EventArgs e)
         {
-            
+            numero1 = Convert.ToDouble(txtDisplay.Text.Trim());
+            resultado = numero1 * numero1;
+            txtDisplay.Text = resultado.ToString();
+            pressionouIgual = true;
         }
 
         private void buttonPotencia_Click(object sender, EventArgs e)
         {
             adicionarOperacao("^");
+        }
+
+        private void buttonRaizQuadrada_Click(object sender, EventArgs e)
+        {
+            numero1 = Convert.ToDouble(txtDisplay.Text.Trim());
+            resultado = Math.Sqrt(numero1);
+            txtDisplay.Text = resultado.ToString();
+            pressionouIgual = true;
+        }
+
+        private void buttonInverso_Click(object sender, EventArgs e)
+        {
+            numero1 = Convert.ToDouble(txtDisplay.Text.Trim());
+            resultado = 1 / numero1;
+            txtDisplay.Text = resultado.ToString();
+            pressionouIgual = true;
         }
     }
 }

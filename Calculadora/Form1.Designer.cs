@@ -287,7 +287,7 @@ namespace Calculadora
             this.btnInverso.TabIndex = 4;
             this.btnInverso.Text = "1/x";
             this.btnInverso.UseVisualStyleBackColor = true;
-            this.btnInverso.Click += new System.EventHandler(this.button6_Click);
+            this.btnInverso.Click += new System.EventHandler(this.buttonInverso_Click);
             // 
             // btnIgual
             // 
@@ -320,7 +320,7 @@ namespace Calculadora
             this.btnRaizQuadrada.TabIndex = 7;
             this.btnRaizQuadrada.Text = "sqrt(x)";
             this.btnRaizQuadrada.UseVisualStyleBackColor = true;
-            this.btnRaizQuadrada.Click += new System.EventHandler(this.button4_Click);
+            this.btnRaizQuadrada.Click += new System.EventHandler(this.buttonRaizQuadrada_Click);
             // 
             // btnPotencia
             // 
