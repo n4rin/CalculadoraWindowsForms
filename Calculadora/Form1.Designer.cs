@@ -176,7 +176,7 @@ namespace Calculadora
             this.btnPonto.TabIndex = 20;
             this.btnPonto.Text = ",";
             this.btnPonto.UseVisualStyleBackColor = true;
-            this.btnPonto.Click += new System.EventHandler(this.button6_Click);
+            this.btnPonto.Click += new System.EventHandler(this.buttonPonto_Click);
             // 
             // txtDisplay
             // 
@@ -232,7 +232,7 @@ namespace Calculadora
             this.btnSoma.TabIndex = 4;
             this.btnSoma.Text = "+";
             this.btnSoma.UseVisualStyleBackColor = true;
-            this.btnSoma.Click += new System.EventHandler(this.button6_Click);
+            this.btnSoma.Click += new System.EventHandler(this.buttonSoma_Click);
             // 
             // btnMaisMenos
             // 
@@ -265,7 +265,7 @@ namespace Calculadora
             this.btnSubtracao.TabIndex = 7;
             this.btnSubtracao.Text = "-";
             this.btnSubtracao.UseVisualStyleBackColor = true;
-            this.btnSubtracao.Click += new System.EventHandler(this.button4_Click);
+            this.btnSubtracao.Click += new System.EventHandler(this.buttonSubtracao_Click);
             // 
             // btnMultiplica
             // 
@@ -276,7 +276,7 @@ namespace Calculadora
             this.btnMultiplica.TabIndex = 10;
             this.btnMultiplica.Text = "*";
             this.btnMultiplica.UseVisualStyleBackColor = true;
-            this.btnMultiplica.Click += new System.EventHandler(this.button10_Click);
+            this.btnMultiplica.Click += new System.EventHandler(this.buttonMultiplicacao_Click);
             // 
             // btnInverso
             // 
@@ -298,7 +298,7 @@ namespace Calculadora
             this.btnIgual.TabIndex = 20;
             this.btnIgual.Text = "=";
             this.btnIgual.UseVisualStyleBackColor = true;
-            this.btnIgual.Click += new System.EventHandler(this.button6_Click);
+            this.btnIgual.Click += new System.EventHandler(this.buttonIgual_Click);
             // 
             // btnQuadrado
             // 

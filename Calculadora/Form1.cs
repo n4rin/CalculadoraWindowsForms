@@ -12,6 +12,32 @@ namespace Calculadora
 {
     public partial class Form1 : Form
     {
+        private double numero1;
+        private double numero2;
+        private string operacao;
+        private double resultado;
+        private Boolean pressionouIgual;
+
+        private void limparCampo()
+        {
+            numero1 = 0;
+            numero2 = 0;
+            operacao = string.Empty;
+            resultado = 0;
+            pressionouIgual = false;
+            txtDisplay.Clear();
+        }
+
+        private void adicionarOperacao(string caractere)
+        {
+            if (!txtDisplay.Text.Trim().Equals(string.Empty))
+            {
+                numero1 = Convert.ToDouble(txtDisplay.Text.Trim());
+                txtDisplay.Clear();
+                operacao = caractere;
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -61,32 +87,26 @@ namespace Calculadora
         {
             if (!txtDisplay.Text.Trim().Equals("0"))
             {
-                txtDisplay.Text = digito;
+                txtDisplay.Text = txtDisplay.Text + digito;
             }
             else
-                txtDisplay.Text = txtDisplay.Text + digito;
+                txtDisplay.Text = digito;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!txtDisplay.Text.Trim().Equals("0"))
-            {
-                txtDisplay.Text = txtDisplay.Text + "0";
-            } else
-            {
-                txtDisplay.Text = "0";
-            }
+            adicionarDigito("1");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            limparCampo();
         }
 
 
         private void buttonZero_Click(object sender, EventArgs e)
         {
-            adicionarDigito("");
+            adicionarDigito("0");
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -104,9 +124,69 @@ namespace Calculadora
             adicionarOperacao("/");
         }
 
-        void adicionarOperacao(string v)
+        private void buttonIgual_Click(object sender, EventArgs e)
         {
-            
+            if (!txtDisplay.Text.Trim().Equals(String.Empty))
+            {
+                numero2 = Convert.ToDouble(txtDisplay.Text.Trim());
+                Calcular();
+                pressionouIgual = true;
+            }
+        }
+
+        private void Calcular()
+        {
+            switch (operacao)
+            {
+                case "/":
+                    if (numero2 == 0)
+                    {
+                        MessageBox.Show("IMPOSSÍVEL DIVISÃO POR 0 !", "AVISO DO SISTEMA", MessageBoxButtons.OK);
+                        break;
+                    }
+                    resultado = numero1 / numero2;
+                    break;
+
+                case "+":
+                    resultado = numero1 + numero2;
+                    break;
+                case "-":
+                    resultado = numero1 - numero2;
+                    break;
+                case "*":
+                    resultado = numero1 * numero2;
+                    break;
+            }
+            txtDisplay.Text = resultado.ToString();
+        }
+
+        private void buttonSoma_Click(object sender, EventArgs e)
+        {
+            adicionarOperacao("+");
+        }
+
+        private void buttonSubtracao_Click(object sender, EventArgs e)
+        {
+            adicionarOperacao("-");
+        }
+
+        private void buttonMultiplicacao_Click(object sender, EventArgs e)
+        {
+            adicionarOperacao("*");
+        }
+
+        private void buttonPonto_Click(object sender, EventArgs e)
+        {
+            if (pressionouIgual)
+            {
+                limparCampo();
+            }
+            if (txtDisplay.Text.Trim().Equals(String.Empty))
+            {
+                txtDisplay.Text += "0,";
+            }
+            if (txtDisplay.Text.Trim().Contains(",")) return;
+            txtDisplay.Text += ",";
         }
     }
 }
