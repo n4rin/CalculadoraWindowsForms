@@ -309,7 +309,7 @@ namespace Calculadora
             this.btnQuadrado.TabIndex = 8;
             this.btnQuadrado.Text = "x^2";
             this.btnQuadrado.UseVisualStyleBackColor = true;
-            this.btnQuadrado.Click += new System.EventHandler(this.button8_Click);
+            this.btnQuadrado.Click += new System.EventHandler(this.buttonQuadrado_Click);
             // 
             // btnRaizQuadrada
             // 
@@ -331,7 +331,7 @@ namespace Calculadora
             this.btnPotencia.TabIndex = 10;
             this.btnPotencia.Text = "x^y";
             this.btnPotencia.UseVisualStyleBackColor = true;
-            this.btnPotencia.Click += new System.EventHandler(this.button10_Click);
+            this.btnPotencia.Click += new System.EventHandler(this.buttonPotencia_Click);
             // 
             // Form1
             // 

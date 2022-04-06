@@ -53,11 +53,6 @@ namespace Calculadora
             adicionarDigito("2");
         }
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             adicionarDigito("4");
@@ -156,6 +151,14 @@ namespace Calculadora
                 case "*":
                     resultado = numero1 * numero2;
                     break;
+
+                case "^2":
+                    resultado = numero1 * numero1;
+                    break;
+
+                case "^":
+                    resultado = Math.Pow(numero1, numero2);
+                    break;
             }
             txtDisplay.Text = resultado.ToString();
         }
@@ -187,6 +190,16 @@ namespace Calculadora
             }
             if (txtDisplay.Text.Trim().Contains(",")) return;
             txtDisplay.Text += ",";
+        }
+
+        private void buttonQuadrado_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttonPotencia_Click(object sender, EventArgs e)
+        {
+            adicionarOperacao("^");
         }
     }
 }
