@@ -24,7 +24,7 @@ namespace Calculadora
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            adicionarDigito("2");
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -34,37 +34,37 @@ namespace Calculadora
 
         private void button4_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
+            adicionarDigito("4");
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            adicionarDigito("8");
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
+            adicionarDigito("5");
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            adicionarDigito("6");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            adicionarDigito("3");
+        }
 
+        void adicionarDigito(string digito)
+        {
+            if (!txtDisplay.Text.Trim().Equals("0"))
+            {
+                txtDisplay.Text = digito;
+            }
+            else
+                txtDisplay.Text = txtDisplay.Text + digito;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,9 +83,30 @@ namespace Calculadora
 
         }
 
-        private void btn0_MouseHover(object sender, EventArgs e)
-        {
 
+        private void buttonZero_Click(object sender, EventArgs e)
+        {
+            adicionarDigito("");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            adicionarDigito("7");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            adicionarDigito("9");
+        }
+
+        private void buttonDivide_Click(object sender, EventArgs e)
+        {
+            adicionarOperacao("/");
+        }
+
+        void adicionarOperacao(string v)
+        {
+            
         }
     }
 }
