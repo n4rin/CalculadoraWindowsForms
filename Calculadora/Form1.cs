@@ -220,5 +220,11 @@ namespace Calculadora
             txtDisplay.Text = resultado.ToString();
             pressionouIgual = true;
         }
+
+
+        private void buttonC_Click(object sender, EventArgs e)
+        {
+            limparCampo();
+        }
     }
 }

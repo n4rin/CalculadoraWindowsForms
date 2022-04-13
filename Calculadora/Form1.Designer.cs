@@ -199,7 +199,7 @@ namespace Calculadora
             this.btnC.TabIndex = 8;
             this.btnC.Text = "C";
             this.btnC.UseVisualStyleBackColor = true;
-            this.btnC.Click += new System.EventHandler(this.button8_Click);
+            this.btnC.Click += new System.EventHandler(this.buttonC_Click);
             // 
             // btnCE
             // 
